@@ -117,6 +117,10 @@ public struct Edges: Compound, RelativeCompoundEquality, RelativeCompoundInequal
         )
     }
     #endif
+
+    public func inset(_ insets: CGFloat...) -> Expression<Edges> {
+        return Expression(self, insets.map { Coefficients(1, $0) })
+    }
 }
 
 /// Insets all edges.
